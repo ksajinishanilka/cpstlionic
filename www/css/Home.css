@@ -1,0 +1,53 @@
+.image {
+    background: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    margin-top: 80px;
+    position: relative;
+}
+
+.pane { 
+        background: url('../img/black.jpg'); 
+        background-size: 100% 100% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+
+.bar {
+    height:70px;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+   
+
+
+    
+}
+
+.button{
+    font-size: 25px;
+    font-family: arial;
+    text-align: center;
+
+}
+
+.textbox{
+
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    font-family: arial;
+}
+
+.title{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
