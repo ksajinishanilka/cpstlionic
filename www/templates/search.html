@@ -1,0 +1,22 @@
+
+<ion-view title="Search">
+    <ion-content ng-controller="MapSearchController">
+        
+         <div class="list">
+          <div class="item item-input-inset barcolor" >
+            <label class="item-input-wrapper">
+              <input id="address" type="text" placeholder="Enter city">
+            </label>
+            <button id="submit" class="button button-small " id="searchbut" ng-click="geocodeAddress()">
+              search
+            </button>
+            <button class="button button-small" id="searchbut" ng-click="myGoBack()">
+              Back
+            </button>
+
+          </div>
+
+        </div>
+        <div id="map" data-tap-disabled="true"></div>
+    </ion-content>
+</ion-view>

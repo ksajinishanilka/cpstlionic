@@ -3,8 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
-angular.module('starter', ['ionic', 'ngCordova'])
+var cpstlApp = angular.module('starter', ['ionic','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,64 +21,30 @@ angular.module('starter', ['ionic', 'ngCordova'])
       StatusBar.styleDefault();
     }
   });
-})
-
-
-
-//to switch between views
-/*.config(function($stateProvider, $urlRouterProvider) {
- 
-  $stateProvider
-  .state('map', {
-    url: '/',
-    templateUrl: 'templates/map.html',
-    controller: 'MapCtrl'
-  });
- 
-  $urlRouterProvider.otherwise("/");
- 
-})
-
-
-//initialize a google map
-//$cordovaGeolocation-to get the users current position
-
-/*.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
-  var options = {timeout: 10000, enableHighAccuracy: true};
- 
-  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
- 
-    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
- 
-    var mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
- 
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    //to place a marker at the current location
-    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
- 
-  var marker = new google.maps.Marker({
-      map: $scope.map,
-      animation: google.maps.Animation.DROP,
-      position: latLng
-  });      
- //pops up a window when the user clicks on the marker
-  var infoWindow = new google.maps.InfoWindow({
-      content: "current location"
-  });
- 
-  google.maps.event.addListener(marker, 'click', function () {
-      infoWindow.open($scope.map, marker);
-  });
- 
-});
- 
-  }, function(error){
-    console.log("Could not get location");
-  });
-
-});*/
-
+}).config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: 'templates/test.html',
+                controller: 'HomeController'
+            })
+            .state('search', {
+                url: '/searchloc',
+                templateUrl: 'templates/search.html',
+                controller: 'SearchController'
+            })
+            .state('current', {
+                url: '/searchcur',
+                templateUrl: 'templates/curlocation.html',
+                controller: 'CurrentLocationController'
+            })
+            .state('products', {
+                url: '/products',
+                templateUrl: 'templates/productlist.html',
+                params: {
+                           stationid: null
+                         },
+                controller: 'ProductListController'
+            });
+        $urlRouterProvider.otherwise('/home');
+    });

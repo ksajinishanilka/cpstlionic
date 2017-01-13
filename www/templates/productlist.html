@@ -1,0 +1,43 @@
+<ion-view title="Product List">
+    <div class="list">
+          <div class="item "  style="background-color:#333;color:white;">
+
+            Products Available
+
+          </div>
+        </div>
+   
+    <ion-content class="has-header has-subheader">
+        <div class="list list-inset" id="product" > 
+            <div class="item proditem" ng-repeat="product in productList">
+            <i class="icon ion-ios-pint"></i>
+                 {{product}}
+            </div>
+        </div>
+      
+      </ion-content>
+</ion-view>
+<!--<div class="list list-inset">
+
+    <div class="item">
+      Raiders of the Lost Ark
+    </div>
+
+    ...
+
+</div>
+
+<!--<ion-view title="Product List">
+    <ion-header-bar class="bar-stable" style="background-color:#333;color:white;">
+          Products Available
+          
+    </ion-header-bar>
+    <ion-content class="has-header has-subheader">
+        <ul class="list" id="product">
+            <li ng-repeat="product in productList" class="item">
+                    {{product}}
+            </li>
+        </ul>
+      
+      </ion-content>
+</ion-view>-->
