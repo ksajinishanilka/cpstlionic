@@ -41,22 +41,7 @@ cpstlApp.controller("MapCurrentController", function($scope, $state,$compile) {
         
     });
 
-   /*$scope.calcRoute = function(){
-    var start = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-    var end = new google.maps.LatLng(37.441883, -122.143019);
-    var request = {
-      origin: start,
-      destination: end,
-      travelMode: google.maps.TravelMode.DRIVING
-    };
-    directionsService.route(request, function(response, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-        directionsDisplay.setMap(map);
-      } else {
-        alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
-      }
-    });*/
+   
     $scope.geocodeAddress = function(){
         location.reload();
     };
@@ -66,8 +51,8 @@ cpstlApp.controller("MapCurrentController", function($scope, $state,$compile) {
     };
 
     $scope.callAjaxRequest = function(map,lat,lng,dist){
-         //var url ="http://cpstl.azurewebsites.net/handlers/databasehandler.php";
-        var url = "http://localhost/group2/distance-route-cpstl/responsive/handlers/databasehandler.php";
+         var url ="http://cpstl.azurewebsites.net/handlers/databasehandler.php";
+        //var url = "http://localhost/group2/distance-route-cpstl/responsive/handlers/databasehandler.php";
         console.log(lat+":"+lng);
         
         $.get(

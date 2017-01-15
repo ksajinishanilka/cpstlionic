@@ -19,12 +19,7 @@ cpstlApp.controller("MapSearchController", function($scope, $state,$compile) {
  
         navigator.geolocation.getCurrentPosition(function(pos) {
             map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-            /*
-            var myLocation = new google.maps.Marker({
-                position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-                map: map,
-                title: "My Location"
-            });*/
+            
         });
         
 
@@ -55,10 +50,13 @@ cpstlApp.controller("MapSearchController", function($scope, $state,$compile) {
     $scope.myGoBack = function() {
         $state.go("home");
     };
+    $scope.refresh = function(){
+        location.reload();
+    };
 
     $scope.callAjaxRequest = function(map,lat,lng,dist){
-        // var url ="http://cpstl.azurewebsites.net/handlers/databasehandler.php";
-        var url = "http://localhost/group2/distance-route-cpstl/responsive/handlers/databasehandler.php";
+        var url ="http://cpstl.azurewebsites.net/handlers/databasehandler.php";
+        //var url = "http://localhost/group2/distance-route-cpstl/responsive/handlers/databasehandler.php";
         console.log(lat+":"+lng);
         
         $.get(
